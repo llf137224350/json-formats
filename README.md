@@ -11,7 +11,7 @@ const res = format(json对象||json字符串, {})
 方法第二个参数接收一个对象，对象内容如下：
 
 {
-  linkBreak: '\n',          // 换行符
+  lineBreak: '\n',          // 换行符
   indentStr: '  '           // 缩进 默认两个空格
 }
 ````

@@ -1,6 +1,6 @@
 {
   "name": "json-formats",
-  "version": "1.0.3",
+  "version": "1.0.4",
   "description": "json 格式化",
   "main": "index.js",
   "scripts": {
