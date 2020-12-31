@@ -1,4 +1,4 @@
-# json-format
+# json-formats
   格式化json字符串，以便于阅读
 
 **使用方式：**
