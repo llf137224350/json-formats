@@ -3,7 +3,7 @@
 
 **使用方式：**
 ````
-const format = require('json-format');
+const format = require('json-formats');
 const res = format(json对象||json字符串, {})
 ````
 **参数配置：**
@@ -49,4 +49,4 @@ json字符串
 
 点击下面的连接将跳转到[在线体验地址](https://etctest.cyzl.com/hello_json 'HelloJSON')，由于是网页版所以做了语法着色处理
 
-点击下面的连接查看完整版源码[完整版源码地址](https://github.com/llf137224350/json-format ' json-format')
+点击下面的连接查看完整版源码[完整版源码地址](https://github.com/llf137224350/json-formats ' json-formats')
