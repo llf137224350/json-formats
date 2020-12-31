@@ -1,0 +1,30 @@
+{
+  "name": "json-format",
+  "version": "1.0.0",
+  "description": "json 格式化",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/llf137224350/json-format.git"
+  },
+  "keywords": [
+    "json",
+    "typescript",
+    "interface"
+  ],
+  "author": "",
+  "license": "ISC",
+  "bugs": {
+    "url": "https://github.com/llf137224350/json-format/issues"
+  },
+  "publishConfig": {
+    "access": "public"
+  },
+  "homepage": "https://github.com/llf137224350/json-format#readme",
+  "devDependencies": {
+    "jest": "^26.6.3"
+  }
+}
