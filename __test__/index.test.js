@@ -50,3 +50,81 @@ test('复杂json', () => {
   ]
 }`)
 });
+test('测试数组', () => {
+  const format = require('../');
+  const datas = [{
+    "id": "792085712309854208",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 1"
+  }, {
+    "id": "766410261029724160",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 2"
+  }, {
+    "id": "770719340921364480",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 3"
+  }, {
+    "id": "770946438416048128",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 4"
+  }, {
+    "id": "781950121802735616",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 5"
+  }, {
+    "id": "766411654436233216",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 6"
+  }, {
+    "id": "770716883860332544",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 7"
+  }, {
+    "id": "796879308510732288",
+    "imgUrl": "../../images/icon.png",
+    "title": "迅雷白金会员月卡 - 8"
+  }];
+  expect(format(datas)).toBe(`[
+  {
+    id: "792085712309854208",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 1"
+  },
+  {
+    id: "766410261029724160",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 2"
+  },
+  {
+    id: "770719340921364480",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 3"
+  },
+  {
+    id: "770946438416048128",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 4"
+  },
+  {
+    id: "781950121802735616",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 5"
+  },
+  {
+    id: "766411654436233216",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 6"
+  },
+  {
+    id: "770716883860332544",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 7"
+  },
+  {
+    id: "796879308510732288",
+    imgUrl: "../../images/icon.png",
+    title: "迅雷白金会员月卡 - 8"
+  }
+]`)
+});

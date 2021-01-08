@@ -3,7 +3,12 @@ let Config = {
   lineBreak: '\n',
   normalTypes: ['string', 'number', 'boolean']
 };
-
+const _isObject = (obj) => {
+  return Object.prototype.toString.call(obj) === '[object Object]'
+}
+const _isArray = (obj) => {
+  return Object.prototype.toString.call(obj) === '[object Array]'
+}
 /**
  * 解析左大括号
  * @returns {string}
@@ -135,7 +140,7 @@ const _formatArr = (arr, currentStr, indent) => {
       currentStr += `${Config.lineBreak}${indent + Config.indentStr}`;
       if (Config.normalTypes.includes(typeof arr[i])) {
         currentStr += _getRenderValue(arr[i]);
-      } else if (arr[i] instanceof Array) { // 还是个数组
+      } else if (_isArray(arr[i])) { // 还是个数组
         currentStr = _formatArr(arr[i], currentStr, indent + Config.indentStr);
       } else {
         currentStr = _format(arr[i], currentStr, indent + Config.indentStr);
@@ -165,7 +170,7 @@ const _format = (jsonObj, currentStr, indent) => {
     currentStr += `${i === 0 ? '' : ','}${Config.lineBreak}${Config.indentStr}${indent}${_getRenderKey(keys[i])}: `;
     if (Config.normalTypes.includes(typeof jsonObj[keys[i]])) {
       currentStr += `${_getRenderValue(jsonObj[keys[i]])}`
-    } else if (jsonObj[keys[i]] instanceof Array) { // 数组
+    } else if (_isArray(jsonObj[keys[i]])) { // 数组
       currentStr = _formatArr(jsonObj[keys[i]], currentStr, indent + Config.indentStr);
     } else {
       currentStr = _format(jsonObj[keys[i]], currentStr, indent + Config.indentStr);
@@ -189,7 +194,11 @@ const format = (jsonStr, options = {}) => {
   let result = '';
   try {
     const json = typeof jsonStr === 'string' ? JSON.parse(jsonStr) : jsonStr;
-    result = _format(json, result, '');
+    if (_isObject(json)) {
+      result = _format(json, result, '');
+    } else {
+      result = _formatArr(json, result, '');
+    }
   } catch (e) {
     console.log(e);
     result = e.message;

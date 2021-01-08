@@ -1,6 +1,6 @@
 {
   "name": "json-formats",
-  "version": "1.0.4",
+  "version": "1.0.5",
   "description": "json 格式化",
   "main": "index.js",
   "scripts": {
@@ -14,7 +14,7 @@
     "json",
     "format"
   ],
-  "author": "",
+  "author": "い 狂奔的蜗牛",
   "license": "ISC",
   "bugs": {
     "url": "https://github.com/llf137224350/json-formats/issues"
