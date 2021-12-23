@@ -160,7 +160,13 @@ const _formatArr = (arr, currentStr, indent) => {
  * @private
  */
 const _format = (jsonObj, currentStr, indent) => {
-  const keys = Reflect.ownKeys(jsonObj);
+  let keys = [];
+  try {
+    keys = Reflect.ownKeys(jsonObj);
+  } catch (e) {
+    // jsonObj === null
+    return currentStr += jsonObj;
+  }
   if (!keys.length) {
     return currentStr += _getRenderLeftBrackets() + _getRenderRightBrackets();
   }
@@ -194,6 +200,7 @@ const format = (jsonStr, options = {}) => {
   let result = '';
   try {
     const json = typeof jsonStr === 'string' ? JSON.parse(jsonStr) : jsonStr;
+    debugger
     if (_isObject(json)) {
       result = _format(json, result, '');
     } else {
